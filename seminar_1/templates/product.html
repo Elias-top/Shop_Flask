@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product_name }} - My Shop{% endblock %}
+
+{% block content %}
+<h2>{{ product_name }}</h2>
+<p>{{ product_description }}</p>
+<p>Price: {{ product_price }}</p>
+<!-- Здесь могут быть добавлены дополнительные сведения о товаре -->
+{% endblock %}

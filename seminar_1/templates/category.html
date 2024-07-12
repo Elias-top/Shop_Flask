@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category_name }} - My Shop{% endblock %}
+
+{% block content %}
+<h2>{{ category_name }}</h2>
+<ul>
+    {% for product in products %}
+    <li><a href="{{ url_for('product', product_name=product['name']) }}">{{ product['display_name'] }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
