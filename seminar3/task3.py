@@ -17,7 +17,9 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
 
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -43,5 +45,4 @@ def register_success():
 
 
 if __name__ == '__main__':
-    db.create_all()
     app.run(debug=True)
